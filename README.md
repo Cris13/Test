@@ -2,4 +2,4 @@
 
 ## Introduction
 
-A simple interview exercise involving HTTP POST requests.
+A simple interview exercise.
