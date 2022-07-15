@@ -10,7 +10,12 @@ export const initialState: UserEntity = adapter.getInitialState();
 
 export const userReducer = createReducer(
   initialState,
-  on(loginActions.loginSuccess, (state, action) => adapter.addOne(action.user, state)),
+  on(loginActions.loginSuccess, (state, action) => {
+    if(action.user){
+      return adapter.addOne(action.user, state);
+    }
+    return state;
+  }),
 );
 
 export const reducerFunc = (state: UserEntity | undefined, action: Action) => userReducer(state, action);
