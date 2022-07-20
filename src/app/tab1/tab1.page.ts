@@ -26,5 +26,9 @@ export class Tab1Page implements OnInit {
     );
   }
 
+  getTitle(post: any){
+    return post.title;
+  }
+
 
 }
